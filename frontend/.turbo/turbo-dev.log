@@ -1,0 +1,147 @@
+
+
+> @repo/frontend@0.1.0 dev /Users/heesang/About_Develop/oauth-module/frontend
+> next dev
+
+  [1m[38;2;173;127;168m▲ Next.js 14.2.5[39m[22m
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+  - Experiments (use with caution):
+    · typedRoutes
+
+ [32m[1m✓[22m[39m Starting...
+ [32m[1m✓[22m[39m Ready in 1228ms
+ [32m[1m✓[22m[39m Compiled / in 404ms (496 modules)
+ GET / [32m200[39m in 500ms
+ [32m[1m✓[22m[39m Compiled /_not-found in 115ms (499 modules)
+ GET /firebase-messaging-sw.js [33m404[39m in 184ms
+ [32m[1m✓[22m[39m Compiled in 501ms (262 modules)
+ [32m[1m✓[22m[39m Compiled in 117ms (262 modules)
+ [32m[1m✓[22m[39m Compiled in 106ms (262 modules)
+ [32m[1m✓[22m[39m Compiled in 81ms (262 modules)
+ [31m[1m⨯[22m[39m ./src/app/page.tsx
+Error: 
+  [38;2;255;30;30m×[0m the name `useState` is defined multiple times
+    ╭─[[38;2;92;157;255;1;4m/Users/heesang/About_Develop/oauth-module/frontend/src/app/page.tsx[0m:1:1]
+ [2m 1[0m │ "use client";
+ [2m 2[0m │ 
+ [2m 3[0m │ import { useMemo, useState } from "react";
+    · [38;2;246;87;248m                  ────┬───[0m
+    ·                       [38;2;246;87;248m╰── [38;2;246;87;248mprevious definition of `useState` here[0m[0m
+ [2m 4[0m │ "use client";
+ [2m 5[0m │ 
+ [2m 6[0m │ import Link from "next/link";
+ [2m 7[0m │ import { useEffect, useState } from "react";
+    · [38;2;30;201;212m                    ────┬───[0m
+    ·                         [38;2;30;201;212m╰── [38;2;30;201;212m`useState` redefined here[0m[0m
+ [2m 8[0m │ import { Card, CardBody, CardHeader, Button } from "@repo/ui";
+ [2m 9[0m │ import { apiFetch, clearAuthTokens } from "@/lib/api-client";
+ [2m10[0m │ import { tokenStorage } from "@/lib/token-storage";
+    ╰────
+
+  [38;2;255;30;30m×[0m The "use client" directive must be placed before other expressions. Move it to the top of the file to resolve this issue.
+   ╭─[[38;2;92;157;255;1;4m/Users/heesang/About_Develop/oauth-module/frontend/src/app/page.tsx[0m:1:1]
+ [2m1[0m │ "use client";
+ [2m2[0m │ 
+ [2m3[0m │ import { useMemo, useState } from "react";
+ [2m4[0m │ "use client";
+   · [38;2;246;87;248m─────────────[0m
+ [2m5[0m │ 
+ [2m6[0m │ import Link from "next/link";
+ [2m7[0m │ import { useEffect, useState } from "react";
+   ╰────
+
+Import trace for requested module:
+./src/app/page.tsx
+ [31m[1m⨯[22m[39m ./src/app/page.tsx
+Error: 
+  [38;2;255;30;30m×[0m the name `useState` is defined multiple times
+    ╭─[[38;2;92;157;255;1;4m/Users/heesang/About_Develop/oauth-module/frontend/src/app/page.tsx[0m:1:1]
+ [2m 1[0m │ "use client";
+ [2m 2[0m │ 
+ [2m 3[0m │ import { useMemo, useState } from "react";
+    · [38;2;246;87;248m                  ────┬───[0m
+    ·                       [38;2;246;87;248m╰── [38;2;246;87;248mprevious definition of `useState` here[0m[0m
+ [2m 4[0m │ "use client";
+ [2m 5[0m │ 
+ [2m 6[0m │ import Link from "next/link";
+ [2m 7[0m │ import { useEffect, useState } from "react";
+    · [38;2;30;201;212m                    ────┬───[0m
+    ·                         [38;2;30;201;212m╰── [38;2;30;201;212m`useState` redefined here[0m[0m
+ [2m 8[0m │ import { Card, CardBody, CardHeader, Button } from "@repo/ui";
+ [2m 9[0m │ import { apiFetch, clearAuthTokens } from "@/lib/api-client";
+ [2m10[0m │ import { tokenStorage } from "@/lib/token-storage";
+    ╰────
+
+  [38;2;255;30;30m×[0m The "use client" directive must be placed before other expressions. Move it to the top of the file to resolve this issue.
+   ╭─[[38;2;92;157;255;1;4m/Users/heesang/About_Develop/oauth-module/frontend/src/app/page.tsx[0m:1:1]
+ [2m1[0m │ "use client";
+ [2m2[0m │ 
+ [2m3[0m │ import { useMemo, useState } from "react";
+ [2m4[0m │ "use client";
+   · [38;2;246;87;248m─────────────[0m
+ [2m5[0m │ 
+ [2m6[0m │ import Link from "next/link";
+ [2m7[0m │ import { useEffect, useState } from "react";
+   ╰────
+
+Import trace for requested module:
+./src/app/page.tsx
+ [37m[1m○[22m[39m Compiling /_error ...
+ GET / [31m500[39m in 5ms
+ [31m[1m⨯[22m[39m ./src/app/page.tsx
+Error: 
+  [38;2;255;30;30m×[0m the name `useState` is defined multiple times
+    ╭─[[38;2;92;157;255;1;4m/Users/heesang/About_Develop/oauth-module/frontend/src/app/page.tsx[0m:1:1]
+ [2m 1[0m │ "use client";
+ [2m 2[0m │ 
+ [2m 3[0m │ import { useMemo, useState } from "react";
+    · [38;2;246;87;248m                  ────┬───[0m
+    ·                       [38;2;246;87;248m╰── [38;2;246;87;248mprevious definition of `useState` here[0m[0m
+ [2m 4[0m │ "use client";
+ [2m 5[0m │ 
+ [2m 6[0m │ import Link from "next/link";
+ [2m 7[0m │ import { useEffect, useState } from "react";
+    · [38;2;30;201;212m                    ────┬───[0m
+    ·                         [38;2;30;201;212m╰── [38;2;30;201;212m`useState` redefined here[0m[0m
+ [2m 8[0m │ import { Card, CardBody, CardHeader, Button } from "@repo/ui";
+ [2m 9[0m │ import { apiFetch, clearAuthTokens } from "@/lib/api-client";
+ [2m10[0m │ import { tokenStorage } from "@/lib/token-storage";
+    ╰────
+
+  [38;2;255;30;30m×[0m The "use client" directive must be placed before other expressions. Move it to the top of the file to resolve this issue.
+   ╭─[[38;2;92;157;255;1;4m/Users/heesang/About_Develop/oauth-module/frontend/src/app/page.tsx[0m:1:1]
+ [2m1[0m │ "use client";
+ [2m2[0m │ 
+ [2m3[0m │ import { useMemo, useState } from "react";
+ [2m4[0m │ "use client";
+   · [38;2;246;87;248m─────────────[0m
+ [2m5[0m │ 
+ [2m6[0m │ import Link from "next/link";
+ [2m7[0m │ import { useEffect, useState } from "react";
+   ╰────
+
+Import trace for requested module:
+./src/app/page.tsx
+ GET /firebase-messaging-sw.js [31m500[39m in 199ms
+ GET /_next/static/webpack/ae0be9ca6549948d.webpack.hot-update.json [31m500[39m in 189ms
+ [33m[1m⚠[22m[39m Fast Refresh had to perform a full reload due to a runtime error.
+ GET / [31m500[39m in 8ms
+ GET /firebase-messaging-sw.js [31m500[39m in 7ms
+ [32m[1m✓[22m[39m Compiled /_not-found in 290ms (727 modules)
+ GET / [32m200[39m in 107ms
+ GET /_next/static/webpack/ae0be9ca6549948d.webpack.hot-update.json [33m404[39m in 396ms
+ [33m[1m⚠[22m[39m Fast Refresh had to perform a full reload due to a runtime error.
+ GET /firebase-messaging-sw.js [33m404[39m in 17ms
+ [32m[1m✓[22m[39m Compiled in 210ms (741 modules)
+ [32m[1m✓[22m[39m Compiled in 83ms (449 modules)
+ [32m[1m✓[22m[39m Compiled in 77ms (449 modules)
+ [32m[1m✓[22m[39m Compiled in 184ms (727 modules)
+ [32m[1m✓[22m[39m Compiled in 233ms (738 modules)
+ [32m[1m✓[22m[39m Compiled in 196ms (738 modules)
+ [32m[1m✓[22m[39m Compiled in 147ms (447 modules)
+ [32m[1m✓[22m[39m Compiled in 156ms (447 modules)
+ [32m[1m✓[22m[39m Compiled in 202ms (738 modules)
+ [32m[1m✓[22m[39m Compiled in 84ms (447 modules)
+ [32m[1m✓[22m[39m Compiled in 259ms (738 modules)
+[?25h

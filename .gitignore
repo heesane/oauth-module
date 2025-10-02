@@ -1,0 +1,15 @@
+node_modules
+.pnpm-store
+pnpm-lock.yaml
+.env
+.env.local
+.env.*
+.idea
+.DS_Store
+out
+.next
+build
+dist
+.gradle
+**/target
+infra/data

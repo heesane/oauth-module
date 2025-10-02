@@ -1,0 +1,22 @@
+networks:
+  dev_network:
+    external: true
+
+volumes:
+  logs:
+  nginx_logs:
+
+services:
+  db:
+    image: postgres:latest
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ted_admin
+      POSTGRES_PASSWORD: ted_admin
+      POSTGRES_DB: ted_oauth
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks:
+      - dev_network
