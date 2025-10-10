@@ -7,7 +7,7 @@ Turborepo 기반의 풀스택 OAuth 2.0 인증/인가 모듈입니다. Next.js(T
 ```
 .
 ├── infra/             # 배포/인프라 구성물을 위한 자리
-├── backend/           # Spring Boot 3 OAuth2 서버
+├── backend/           # Spring Boot 3 OAuth2 서버 (다중 모듈)
 ├── frontend/          # Next.js 14 프론트엔드 (App Router)
 │   └── packages/ui    # 재사용 가능한 React UI 컴포넌트
 ├── turbo.json         # Turborepo 파이프라인 구성
@@ -39,10 +39,11 @@ pnpm dev
 
 ```bash
 cd backend
-# 로컬에 gradle이 있다면
-gradle bootRun
-# 또는 포함된 gradle wrapper 사용
-./gradlew bootRun
+# 멀티 모듈 구성으로 애플리케이션 모듈(:app)을 지정합니다.
+./gradlew :app:bootRun
+
+# 또는 전체 빌드/테스트 실행
+./gradlew clean build
 ```
 
 ## 환경 변수
@@ -86,6 +87,20 @@ gradle bootRun
 - **JWT 기반 인증**: Access Token + Refresh Token 구조로 세션 없이 인증을 유지하고, 토큰 만료 시 자동으로 재발급합니다.
 - **Tailwind 디자인 시스템**: Tailwind CSS + PostCSS 환경으로 프론트 전반에 일관된 톤앤매너와 반응형 레이아웃을 제공합니다.
 - **공통 UI 컴포넌트**: `frontend/packages/ui`에 버튼/카드/인풋 등을 정의하여 추가 애플리케이션에서도 쉽게 조합 가능합니다.
+
+## 백엔드 모듈 구조
+
+`backend`는 도메인별 책임을 분리한 5개의 Gradle 모듈로 구성됩니다.
+
+| 모듈 | 역할 |
+| --- | --- |
+| `app` | Spring Boot 실행 진입점, 웹 및 보안 설정 |
+| `auth` | 인증/인가 서비스, DTO, JWT 발급 로직 |
+| `domain` | JPA 엔터티 및 공통 베이스 모델 |
+| `persistence` | Repository 계층, 데이터 접근 로직 |
+| `common` | 환경 설정, 전역 유틸리티, 프로퍼티 바인딩 |
+
+의존성은 `app → auth → persistence → domain` 방향으로 조합되며, 공통 설정은 `common` 모듈을 통해 공유합니다. 실행, 테스트, 패키징은 항상 `:app` 모듈을 대상으로 합니다.
 
 ## API 개요
 

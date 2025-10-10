@@ -1,0 +1,3 @@
+rootProject.name = 'oauth-module-backend'
+
+include 'app', 'auth', 'common', 'domain', 'persistence'

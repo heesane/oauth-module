@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "jwt",
+      "type": "ted.oauth.config.JwtProperties",
+      "sourceType": "ted.oauth.config.JwtProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "jwt.access-token-validity-seconds",
+      "type": "java.lang.Long",
+      "sourceType": "ted.oauth.config.JwtProperties"
+    },
+    {
+      "name": "jwt.refresh-token-validity-seconds",
+      "type": "java.lang.Long",
+      "sourceType": "ted.oauth.config.JwtProperties"
+    },
+    {
+      "name": "jwt.secret",
+      "type": "java.lang.String",
+      "sourceType": "ted.oauth.config.JwtProperties"
+    }
+  ],
+  "hints": []
+}

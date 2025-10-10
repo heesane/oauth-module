@@ -13,3 +13,5 @@ dist
 .gradle
 **/target
 infra/data
+secret.yaml
+.turbo

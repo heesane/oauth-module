@@ -1,0 +1,48 @@
+import org.gradle.api.plugins.JavaPlugin
+import org.gradle.api.plugins.JavaPluginExtension
+import org.gradle.api.tasks.testing.Test
+
+plugins {
+    id 'org.springframework.boot' version '3.3.1' apply false
+    id 'io.spring.dependency-management' version '1.1.5' apply false
+}
+
+allprojects {
+    group = 'ted.oauth'
+    version = '0.1.0'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects { Project subproject ->
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencyManagement {
+        imports {
+            mavenBom 'org.springframework.boot:spring-boot-dependencies:3.3.1'
+        }
+    }
+
+    def configureJavaProject = { Project proj ->
+        proj.extensions.configure(JavaPluginExtension) { java ->
+            java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+        }
+
+        proj.dependencies {
+            compileOnly 'org.projectlombok:lombok'
+            annotationProcessor 'org.projectlombok:lombok'
+            testCompileOnly 'org.projectlombok:lombok'
+            testAnnotationProcessor 'org.projectlombok:lombok'
+        }
+
+        proj.tasks.withType(Test).configureEach { test ->
+            test.useJUnitPlatform()
+        }
+    }
+
+    plugins.withType(JavaPlugin) {
+        configureJavaProject(subproject)
+    }
+}
