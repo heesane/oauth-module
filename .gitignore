@@ -14,4 +14,4 @@ dist
 **/target
 infra/data
 secret.yaml
-.turbo
+.turbo/
